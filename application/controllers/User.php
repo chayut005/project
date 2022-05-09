@@ -56,6 +56,7 @@ class User extends CI_Controller {
 		$data['list_user'] = $recLoadUser;
 		
 		$setTitle = strtoupper(str_replace('_', ' ', $this->router->fetch_method()));
+		$this->template->set_master_template('all/'. $this->theme .'/blank_table.php');
 		$this->template->write('page_title', ' TBKK | '.$setTitle.'');
 		$this->template->write_view('page_menu', 'all/'. $this->theme .'/view_menu.php');
 		$this->template->write_view('page_content', 'all/'. $this->theme .'/view_manageuser.php', $data);

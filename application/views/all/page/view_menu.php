@@ -27,7 +27,7 @@
     <li><a href="labs.html">
       <div class="svg-space chid"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 64 80" enable-background="new 0 0 64 64" xml:space="preserve"></svg></div><i class="fa fa-paper-plane bigger-180">&nbsp&nbsp</i> Request</a>
     </li>
-    <li><a href="labs.html">
+    <li><a href="<?php echo site_url('user/manage'); ?>">
       <div class="svg-space chid"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 64 80" enable-background="new 0 0 64 64" xml:space="preserve"></svg></div><i class="fa fa-table bigger-180">&nbsp&nbsp</i> Table Account</a>
     </li>
     <li><a href="contact.html">
