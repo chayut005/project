@@ -2,6 +2,9 @@
   .chid{
     margin-left:-50px;
   }
+  .chid2{
+    margin-left:-40px;
+  }
   .zzz{
     width: 150px;
     height: 150px;
@@ -10,7 +13,7 @@
 </style>
 <header class="side-header">
 
-<a href="#">
+<a href="<?php echo site_url('manage/home'); ?>">
   <div class="logo">
     <img class="zzz" src="https://s.isanook.com/ns/0/rp/r/w850/ya0xa0m1w0/aHR0cHM6Ly9zLmlzYW5vb2suY29tL25zLzAvdWQvMzE5LzE1OTY2MzMvdG9vLmpwZw==.jpg">
   </div>
@@ -21,7 +24,7 @@
   <ul>
   <!--class="active"-->
     <li><a style="font-size:20px;" href="">
-      <div class="svg-space chid"></div><i class="fas fa-user-circle bigger-180">&nbsp</i><?php echo ": ".$this->session->userdata('sessName');?></a>
+      <div class="svg-space chid2"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 64 80" enable-background="new 0 0 64 64" xml:space="preserve"></svg></div><i class="">&nbsp</i><?php echo "Account : ".$this->session->userdata('sessName');?></a>
     </li>
     <hr>
     <li><a href="labs.html">
@@ -30,7 +33,7 @@
     <li><a href="labs.html">
       <div class="svg-space chid"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 64 80" enable-background="new 0 0 64 64" xml:space="preserve"></svg></div><i class="fa fa-table bigger-180">&nbsp&nbsp</i> Table Account</a>
     </li>
-    <li><a href="contact.html">
+    <li><a href="<?php echo site_url('register'); ?>">
       <div class="svg-space chid"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 64 80" enable-background="new 0 0 64 64" xml:space="preserve"></svg></div><i class="fa fa-user-plus bigger-180">&nbsp&nbsp</i> Register</a>
     </li>
 
