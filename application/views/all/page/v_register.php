@@ -50,7 +50,7 @@ a {text-decoration: none;cursor: pointer;font-size: inherit;color: inherit;posit
 .btn {padding: 15px 50px;font-size: 18px;color: #fff;border-radius: 3px;background: #575757;display: inline-block;}
 .side-header {position: fixed;width: 20%;height: 100vh;padding: 1rem 1.5%;overflow-x: hidden;background: #292a2c;z-index: 2;}
 .navbar-side {margin-top: 2rem;height: 450px;position: relative;width: 100%;}.logo {width: 60%;height: auto;margin: auto;margin-top: 1rem !important;}
-.navbar-side ul li {width: 100%;padding: 4px 1em;margin-bottom: 3px;display: block;border-radius: 3px;transition: background 0.1s ease-in-out;}
+.navbar-side ul li {width: 100%;padding: 4px 1em;margin-bottom: 3px;display: block;border-radius: 3px;}
 .navbar-side ul li:hover, .navbar-side ul li.active {background: #575757;}.bottom {position: absolute;bottom: 0;left: 0;}
           .navbar-side a {
             font-weight: bold;
@@ -392,6 +392,7 @@ a {text-decoration: none;cursor: pointer;font-size: inherit;color: inherit;posit
   padding: 30px;
 }
 
+
 .wrapper .title{
   font-size: 24px;
   font-weight: 700;
@@ -423,7 +424,6 @@ a {text-decoration: none;cursor: pointer;font-size: inherit;color: inherit;posit
 .wrapper .form .inputfield .textarea{
   width: 100%;
   outline: none;
-  border: 1px solid #d5dbd9;
   font-size: 15px;
   padding: 8px 10px;
   border-radius: 3px;
@@ -497,7 +497,6 @@ a {text-decoration: none;cursor: pointer;font-size: inherit;color: inherit;posit
 .wrapper .form .inputfield .check .checkmark{
   width: 15px;
   height: 15px;
-  border: 1px solid #fec107;
   display: block;
   position: relative;
 }
@@ -554,6 +553,9 @@ a {text-decoration: none;cursor: pointer;font-size: inherit;color: inherit;posit
   }
 }
 </style>
+        <link rel="stylesheet" type="text/css" href="fonts/style.css">
+		<link rel="stylesheet" type="text/css" href="css/main-style.css">
+		<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
 <div class="wrapper ">
     <div class="title">
       Registration
@@ -591,13 +593,18 @@ a {text-decoration: none;cursor: pointer;font-size: inherit;color: inherit;posit
        </div> 
       <div class="inputfield terms">
           <label class="check">
-            <input type="checkbox">
+            <input name="bb" type="radio">
             <span class="checkmark"></span>
           </label>
-          <p>Employee</p>
+          <p>Employee &nbsp&nbsp&nbsp</p>
+          <label class="check">
+            <input name="bb" type="radio">
+            <span class="checkmark"></span>
+          </label>
+          <p>Admin</p>
        </div> 
       <div class="inputfield">
-        <input type="submit" value="Register" class="btn">
+        <input type="submit" value="Register" class="btn btn-primary">
       </div>
     </div>
 </div>

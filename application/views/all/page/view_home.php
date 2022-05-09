@@ -50,7 +50,7 @@ a {text-decoration: none;cursor: pointer;font-size: inherit;color: inherit;posit
 .btn {padding: 15px 50px;font-size: 18px;color: #fff;border-radius: 3px;background: #575757;display: inline-block;}
 .side-header {position: fixed;width: 20%;height: 100vh;padding: 1rem 1.5%;overflow-x: hidden;background: #292a2c;z-index: 2;}
 .navbar-side {margin-top: 2rem;height: 450px;position: relative;width: 100%;}.logo {width: 60%;height: auto;margin: auto;margin-top: 1rem !important;}
-.navbar-side ul li {width: 100%;padding: 4px 1em;margin-bottom: 3px;display: block;border-radius: 3px;transition: background 0.1s ease-in-out;}
+.navbar-side ul li {width: 100%;padding: 4px 1em;margin-bottom: 3px;display: block;border-radius: 3px;}
 .navbar-side ul li:hover, .navbar-side ul li.active {background: #575757;}.bottom {position: absolute;bottom: 0;left: 0;}
           .navbar-side a {
             font-weight: bold;
@@ -197,7 +197,6 @@ a {text-decoration: none;cursor: pointer;font-size: inherit;color: inherit;posit
               display: inline-block;
               margin-bottom: 2rem;
               outline: none;
-              transition: background 0.1s ease-in-out;
             }
             .contact .contact-form textarea {
               padding: 30px 15px;
@@ -213,7 +212,6 @@ a {text-decoration: none;cursor: pointer;font-size: inherit;color: inherit;posit
               min-height: 300px;
               outline: none;
               font-family: inherit;
-              transition: background 0.1s ease-in-out;
             }
               .contact .contact-form input:focus, .contact .contact-form textarea:focus {
                 border-color: rgb(255,255,255,0.7);
