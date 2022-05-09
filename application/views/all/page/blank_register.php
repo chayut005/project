@@ -58,6 +58,8 @@
 				<?php echo $page_menu;?>
 			
 				<?php echo $page_content;?>
+
+				<?php echo $page_footer;?>
 				
 
 	</div>

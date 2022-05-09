@@ -10,6 +10,7 @@
     height: 150px;
     border-radius: 50%;
   }
+
 </style>
 <header class="side-header">
 
@@ -30,7 +31,7 @@
     <li><a href="labs.html">
       <div class="svg-space chid"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 64 80" enable-background="new 0 0 64 64" xml:space="preserve"></svg></div><i class="fa fa-paper-plane bigger-180">&nbsp&nbsp</i> Request</a>
     </li>
-    <li><a href="<?php echo site_url('user/manage'); ?>">
+    <li><a href="<?php echo site_url('table'); ?>">
       <div class="svg-space chid"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 64 80" enable-background="new 0 0 64 64" xml:space="preserve"></svg></div><i class="fa fa-table bigger-180">&nbsp&nbsp</i> Table Account</a>
     </li>
     <li><a href="<?php echo site_url('register'); ?>">
@@ -52,7 +53,9 @@
 <header class="top-navbar">
   
   <div>
+    <a href="<?php echo site_url('manage/home'); ?>">
   <img class="animate__animated animate__heartBeat" src="<?php echo base_url(); ?>./help/page/img/help.png"  height="80"/>
+   </a>
   </div>
 
 

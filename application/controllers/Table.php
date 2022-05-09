@@ -1,6 +1,6 @@
 <?php defined('BASEPATH')OR exit('No direct script access allowed');
 
-class User extends CI_Controller {
+class Table extends CI_Controller {
 
 	private $theme; 
 		 
@@ -30,40 +30,13 @@ class User extends CI_Controller {
 		
 	public function index(){
 		
-		redirect('manage/helpdesk');
-	}
-	
-	public function manage(){
-
-        $data['str_validate'] = '';
-		$data['img_path'] = $this->img_path;
-
-		$checkSess = $this->connect_db->CheckSession();
-		$this->connect_db->CheckPermission($this->session->userdata('sessUsrId'));
-		
-		if($this->session->userdata('sessUsr') == 'sadmin'){
-
-			$sqlLoadUser = "SELECT su.*, sug.name AS group_name FROM sys_users AS su LEFT JOIN sys_user_groups AS sug ON su.sug_id = sug.sug_id;";
-			$excLoadUser = $this->db->query($sqlLoadUser);
-
-		}else{
-			$sqlLoadUser = "SELECT su.*, sug.name AS group_name FROM sys_users AS su LEFT JOIN sys_user_groups AS sug ON su.sug_id = sug.sug_id WHERE su.sug_id<>'1' AND su.username<>'{$this->session->userdata('sessUsr')}';";
-			$excLoadUser = $this->db->query($sqlLoadUser);
-		}
-
-		
-		$recLoadUser = $excLoadUser->result_array();
-		$data['list_user'] = $recLoadUser;
-		
 		$setTitle = strtoupper(str_replace('_', ' ', $this->router->fetch_method()));
 		$this->template->set_master_template('all/'. $this->theme .'/blank_table.php');
 		$this->template->write('page_title', ' TBKK | '.$setTitle.'');
 		$this->template->write_view('page_menu', 'all/'. $this->theme .'/view_menu.php');
-		$this->template->write_view('page_content', 'all/'. $this->theme .'/view_manageuser.php', $data);
+		$this->template->write_view('page_content', 'all/'. $this->theme .'/v_table.php');
 		$this->template->write_view('page_footer', 'all/'. $this->theme .'/view_footer.php');
 
 		$this->template->render();
-	}
-
-	
+	}	
 }
