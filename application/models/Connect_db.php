@@ -87,12 +87,29 @@ class Connect_db extends CI_Model {
     {
         if($this->session->userdata('loggedIn')!="OK") {
 					
-           redirect('login/account');
+           redirect('login/usera');
 		   return FALSE;
 		   
         }else{	return TRUE; 	}
     }
 
+	public function deleteUser($key=''){
+		$sid = $this->session->userdata('sessUsrId');
+		$this->db->set('enable', '0');
+		$this->db->set('del_flag', '0');
+		$this->db->set('date_delete', 'NOW()', FALSE);
+		$this->db->set('del_by', $sid);
+		$this->db->where('su_id', $key);
+		$exc_user = $this->db->update('sys_users');
+
+		if ($exc_user){
+			
+			return TRUE;	
+		
+		}else{	return FALSE;	}
+		
+	}
 }
+
  
 ?>

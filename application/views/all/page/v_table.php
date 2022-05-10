@@ -17,11 +17,10 @@
 <link rel="stylesheet" type="text/css" href="fonts/style.css">
 		<link rel="stylesheet" type="text/css" href="css/main-style.css">
 		<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		
 <div class=" vvv2">
     <table id="myTable" class="display vvv" style="width: 100%;">
     <thead>
-	
   <tr>
     <th>Username</th>
     <th>Password</th>
@@ -68,7 +67,7 @@
                     <button class="btn bg-warning button1"><i class="fas fa-user-alt"></i></button>
               		</a>										
 			<?php } ?>
-					<a data-original-title='Delete' onclick="javascript:if(confirm('คุณต้องการลบรายการนี้ใช่หรือไม่?')){ window.location='<?php echo base_url().'user/delete/'.$user_detail['su_id'];?>'; }else{ return false; }">
+					<a data-original-title='Delete' onclick="javascript:if(confirm('คุณต้องการลบรายการนี้ใช่หรือไม่?')){ window.location='<?php echo site_url('table/delete/').$user_detail['su_id'];?>'; }else{ return false; }">
                     <button class="btn bg-danger button1"><i class="fas fa-trash-alt "></i></button>
               		</a>
 				</td>
