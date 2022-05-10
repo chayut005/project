@@ -409,18 +409,18 @@ a {text-decoration: none;cursor: pointer;font-size: inherit;color: inherit;posit
   
   <ul>
   <!--class="active"-->
-    <li><a style="font-size:20px;" href="">
+    <li><a style="font-size:20px;" href="<?php echo site_url('manage/home'); ?>">
       <div class="svg-space chid2 padi"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 64 80" enable-background="new 0 0 64 64" xml:space="preserve"></svg></div><i class="">&nbsp</i><?php echo "Account : ".$this->session->userdata('sessName');?></a>
     </li>
     <hr>
     <li><a href="labs.html">
       <div class="svg-space chid padi"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 64 80" enable-background="new 0 0 64 64" xml:space="preserve"></svg></div><i class="fa fa-paper-plane bigger-180">&nbsp&nbsp</i> Request</a>
     </li>
-    <li><a href="<?php echo site_url('table'); ?>">
+    <li><a href="<?php echo site_url('table/xxx'); ?>">
       <div class="svg-space chid padi"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 64 80" enable-background="new 0 0 64 64" xml:space="preserve"></svg></div><i class="fa fa-table bigger-180">&nbsp&nbsp</i> Table Account</a>
     </li>
     <li><a href="<?php echo site_url('register'); ?>">
-      <div class="svg-space chid padi"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 64 80" enable-background="new 0 0 64 64" xml:space="preserve"></svg></div><i class="fa fa-user-plus bigger-180">&nbsp&nbsp</i> Register</a>
+      <div class="svg-space chid padi"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 64 80" enable-background="new 0 0 64 64" xml:space="preserve"></svg></div><i class="fa fa-user-plus bigger-180">&nbsp&nbsp</i> Adduser</a>
     </li>
 
     <li class="bottom"><a href="<?php echo site_url('manage/logout'); ?>">

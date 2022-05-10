@@ -20,8 +20,8 @@
 				<?php echo $page_menu;?>
 			
 				<?php echo $page_content;?>
-				
 
+				<?php echo $page_footer;?>
 	</div>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

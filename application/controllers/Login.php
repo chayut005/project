@@ -103,7 +103,7 @@ class Login extends CI_Controller {
 		
 		$this->template->set_master_template('all/'. $this->theme .'/blank_login.php');
 		$this->template->write('page_title', 'TBKK | '.$setTitle.'');
-		$this->template->write_view('page_content', 'all/'. $this->theme .'/xxx_login.php', $data);
+		$this->template->write_view('page_content', 'all/'. $this->theme .'/View_login.php', $data);
 		$this->template->render();
 
 	}
