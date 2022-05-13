@@ -4,7 +4,7 @@
     <a href="<?php echo site_url('manage/home'); ?>" class="logo">
       <!-- mini logo -->
 	  <b class="logo-mini">
-		  <span class="light-logo"><img src="<?php echo base_url(); ?>./help/page/img/help.png" alt="logo"></span>
+		  <span class="light-logo"><img src="<?php echo base_url(); ?>./help/page/img/helpx.png" alt="logo"></span>
 	  </b>
       <!-- logo-->
       <span class="logo-lg">

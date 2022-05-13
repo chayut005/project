@@ -4,9 +4,9 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <span class="light-logo"><img src="<?php echo base_url();?>./help/page/img/xnxx.png"height="30" alt="logo"></span>
+      <span class="light-logo"><img src="<?php echo base_url();?>./help/page/img/xnxx.png"height="20" alt="logo"></span>
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>
         <li class="breadcrumb-item active">Dashboard</li>
       </ol>
     </section>
