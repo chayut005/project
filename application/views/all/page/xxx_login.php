@@ -1,306 +1,495 @@
-<style>
-  * {
-  padding: 0;
-  margin: 0;
-  color: #1a1f36;
-  box-sizing: border-box;
-  word-wrap: break-word;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Ubuntu,sans-serif;
-}
-.xxx {
-    min-height: 100%;
-    background-color: #ffffff;
-}
-h1 {
-    letter-spacing: -1px;
-}
-a {
-  color: #5469d4;
-  text-decoration: unset;
-}
-.login-root {
-    background: #fff;
-    display: flex;
-    width: 100%;
-    min-height: 100vh;
-    overflow: hidden;
-}
-.loginbackground {
-    min-height: 692px;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 0;
-    z-index: 0;
-    overflow: hidden;
-}
-.flex-flex {
-    display: flex;
-}
-.align-center {
-  align-items: center; 
-}
-.center-center {
-  align-items: center;
-  justify-content: center;
-}
-.box-root {
-    box-sizing: border-box;
-}
-.flex-direction--column {
-    -ms-flex-direction: column;
-    flex-direction: column;
-}
-.loginbackground-gridContainer {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: [start] 1fr [left-gutter] (86.6px)[16] [left-gutter] 1fr [end];
-    grid-template-columns: [start] 1fr [left-gutter] repeat(16,86.6px) [left-gutter] 1fr [end];
-    -ms-grid-rows: [top] 1fr [top-gutter] (64px)[8] [bottom-gutter] 1fr [bottom];
-    grid-template-rows: [top] 1fr [top-gutter] repeat(8,64px) [bottom-gutter] 1fr [bottom];
-    justify-content: center;
-    margin: 0 -2%;
-    transform: rotate(-12deg) skew(-12deg);
-}
-.box-divider--light-all-2 {
-    box-shadow: inset 0 0 0 2px #e3e8ee;
-}
-.box-background--blue {
-    background-color: #5469d4;
-}
-.box-background--white {
-  background-color: #ffffff; 
-}
-.box-background--blue800 {
-    background-color: #212d63;
-}
-.box-background--gray100 {
-    background-color: #e3e8ee;
-}
-.box-background--cyan200 {
-    background-color: #7fd3ed;
-}
-.padding-top--64 {
-  padding-top: 64px;
-}
-.padding-top--24 {
-  padding-top: 24px;
-}
-.padding-top--48 {
-  padding-top: 90px;
-}
-.padding-bottom--24 {
-  padding-bottom: 4px;
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../images/favicon.ico">
+
+    
+	<!-- Bootstrap 4.0-->
+	<link rel="stylesheet" href="../assets/vendor_components/bootstrap/dist/css/bootstrap.css">
+	
+	<!-- Bootstrap extend-->
+	<link rel="stylesheet" href="css/bootstrap-extend.css">
+	
+	<!-- theme style -->
+	<link rel="stylesheet" href="css/master_style.css">
+	
+	<!-- SoftMaterial admin skins -->
+	<link rel="stylesheet" href="css/skins/_all-skins.css">
+	  
+	<!-- weather weather -->
+	<link rel="stylesheet" href="../assets/vendor_components/weather-icons/weather-icons.css">	
+   
+    <!-- Vector CSS -->
+    <link href="../assets/vendor_components/jvectormap/lib2/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
+	
+	<!-- Morris charts -->
+	<link rel="stylesheet" href="../assets/vendor_components/morris.js/morris.css"> 	
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+     
+  </head>
+
+
+<div class="wrapper">
+
+  <header class="main-header">
+    <!-- Logo -->
+    <a href="---------" class="logo">
+      <!-- mini logo -->
+	  <b class="logo-mini">
+		  <span class="light-logo"><img src="../images/logo-light.png" alt="logo"></span>
+		  <span class="dark-logo"><img src="../images/logo-dark.png" alt="logo"></span>
+	  </b>
+      <!-- logo-->
+      <span class="logo-lg">
+		  <img src="../images/logo-light-text.png" alt="logo" class="light-logo">
+	  	  <img src="../images/logo-dark-text.png" alt="logo" class="dark-logo">
+	  </span>
+    </a>
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-static-top">
+	  	
+      <!-- Sidebar toggle button-->
+		  <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+			<span class="sr-only">Toggle navigation</span>
+		  </a>	
+		
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+		  
+		  <li class="search-box">
+            <a class="nav-link hidden-sm-down" href="javascript:void(0)"><i class="mdi mdi-magnify"></i></a>
+            <form class="app-search" style="display: none;">
+                <input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="ti-close"></i></a>
+			</form>
+          </li>			
+		  
+          <!-- Messages -->
  
-}
-.padding-horizontal--48 {
-  padding: 48px;
-}
-.padding-bottom--15 {
-  padding-bottom: 15px;
-}
-.bbb{
-   border-style: solid;
-   border: 2px solid gray;
-   border-radius: 5px;
-}
+          <!-- Notifications -->
+    
+          <!-- Tasks-->
+     
+		  <!-- User Account-->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="../images/user5-128x128.jpg" class="user-image rounded-circle" alt="User Image">
+            </a>
+            <ul class="dropdown-menu scale-up">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="../images/user5-128x128.jpg" class="float-left rounded-circle" alt="User Image">
 
-.flex-justifyContent--center {
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.formbg {
-    margin: 0px auto;
-    width: 100%;
-    max-width: 448px;
-    background: #EFFBFF;
-    border-radius: 4px;
-    box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px, rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;
-}
-span {
-    display: block;
-    font-size: 20px;
-    line-height: 28px;
-    color: #1a1f36;
-}
-label {
-    margin-bottom: 10px;
-}
-.reset-pass a,label {
-    font-size: 14px;
-    font-weight: 600;
-    display: block;
-}
-.reset-pass > a {
-    text-align: right;
-    margin-bottom: 10px;
-}
-.grid--50-50 {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    align-items: center;
-}
-
-.field input {
-    font-size: 16px;
-    line-height: 28px;
-    padding: 8px 16px;
-    width: 100%;
-    min-height: 44px;
-    border: unset;
-    border-radius: 4px;
-    outline-color: rgb(84 105 212 / 0.5);
-    background-color: rgb(255, 255, 255);
-    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
-                rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
-                rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
-                rgba(60, 66, 87, 0.16) 0px 0px 0px 1px, 
-                rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
-                rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
-                rgba(0, 0, 0, 0) 0px 0px 0px 0px;
-}
-
-input[type="submit"] {
-    background-color: rgb(84, 105, 212);
-    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
-                rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
-                rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, 
-                rgb(84, 105, 212) 0px 0px 0px 1px, 
-                rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
-                rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
-                rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
-    color: #fff;
-    font-weight: 600;
-    cursor: pointer;
-}
-a.ssolink {
-    display: block;
-    text-align: center;
-    font-weight: 600;
-}
-.xxx {
-    margin-top:5px;
-}
-.font{
-  font-size:50px;
-  color:#01BEB1;
-}
-.color{
-  color:#FF8D0E;
-}
-
-.listing a {
-    color: #697386;
-    font-weight: 600;
-    margin: 0 10px;
-}
-
-.animationRightLeft {
-  animation: animationRightLeft 2s ease-in-out infinite;
-}
-.animationLeftRight {
-  animation: animationLeftRight 2s ease-in-out infinite;
-}
-.tans3s {
-  animation: animationLeftRight 3s ease-in-out infinite;
-}
-.tans4s {
-  animation: animationLeftRight 4s ease-in-out infinite;
-}
-
-@keyframes animationLeftRight {
-  0% {
-    transform: translateX(0px);
-  }
-  50% {
-    transform: translateX(1000px);
-  }
-  100% {
-    transform: translateX(0px);
-  }
-} 
-
-@keyframes animationRightLeft {
-  0% {
-    transform: translateX(0px);
-  }
-  50% {
-    transform: translateX(-1000px);
-  }
-  100% {
-    transform: translateX(0px);
-  }
-} 
-</style>
-  <div class="login-root">
-    <div class="box-root flex-flex flex-direction--column" style="min-height: 100vh;flex-grow: 1;">
-      <div class="loginbackground box-background--white padding-top--64">
-        <div class="loginbackground-gridContainer">
-          <div class="box-root flex-flex" style="grid-area: top / start / 8 / end;">
-            <div class="box-root" style="background-image: linear-gradient(white 0%, rgb(247, 250, 252) 33%); flex-grow: 1;">
-            </div>
-          </div>
-          <div class="box-root flex-flex" style="grid-area: 4 / 2 / auto / 5;">
-            <div class="box-root box-divider--light-all-2 animationLeftRight tans3s" style="flex-grow: 1;"></div>
-          </div>
-          <div class="box-root flex-flex" style="grid-area: 6 / start / auto / 2;">
-            <div class="box-root box-background--blue800" style="flex-grow: 1;"></div>
-          </div>
-          <div class="box-root flex-flex" style="grid-area: 7 / start / auto / 4;">
-            <div class="box-root box-background--blue animationLeftRight" style="flex-grow: 1;"></div>
-          </div>
-          <div class="box-root flex-flex" style="grid-area: 8 / 4 / auto / 6;">
-            <div class="box-root box-background--gray100 animationLeftRight tans3s" style="flex-grow: 1;"></div>
-          </div>
-          <div class="box-root flex-flex" style="grid-area: 2 / 15 / auto / end;">
-            <div class="box-root box-background--cyan200 animationRightLeft tans4s" style="flex-grow: 1;"></div>
-          </div>
-          <div class="box-root flex-flex" style="grid-area: 3 / 14 / auto / end;">
-            <div class="box-root box-background--blue animationRightLeft" style="flex-grow: 1;"></div>
-          </div>
-          <div class="box-root flex-flex" style="grid-area: 4 / 17 / auto / 20;">
-            <div class="box-root box-background--gray100 animationRightLeft tans4s" style="flex-grow: 1;"></div>
-          </div>
-          <div class="box-root flex-flex" style="grid-area: 5 / 14 / auto / 17;">
-            <div class="box-root box-divider--light-all-2 animationRightLeft tans3s" style="flex-grow: 1;"></div>
-          </div>
-        </div>
-      </div>
-      <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
-        <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
-          <h1><b class="font">Heldesk</b></h1>
-          <h2 class="color">System</h2>
-        </div>
-        <div class="formbg-outer">
-          <div class="formbg">
-            <div class="formbg-inner padding-horizontal--48">
-              <?php echo form_open("login/userr");?>
-                <div class="field padding-bottom--24">
-                  <label class="bbb">
-                  <input type="text" name="userr" placeholder="user">
-                  </label>
-                </div>
-                <div class="field padding-bottom--24">
-                  <div class="grid--50-50">
+                <p>
+                  Juliya Brus
+                
+                  <a href="#" class="btn btn-danger btn-sm btn-rounded">View Profile</a>
+                </p>
+              </li>
+              <!-- Menu Body -->
+              <li class="user-body">
+                <div class="row no-gutters">
+                  <div class="col-12 text-left">
+                    <a href="#"><i class="ion ion-person"></i> My Profile</a>
                   </div>
-                  <label class="bbb">
-                  <input type="password" name="pass" placeholder="Password">
-                  </label>
+                  <div class="col-12 text-left">
+                    <a href="#"><i class="ion ion-email-unread"></i> Inbox</a>
+                  </div>
+                  <div class="col-12 text-left">
+                    <a href="#"><i class="ion ion-settings"></i> Setting</a>
+                  </div>
+				<div role="separator" class="divider col-12"></div>
+				  <div class="col-12 text-left">
+                    <a href="#"><i class="ti-settings"></i> Account Setting</a>
+                  </div>
+				<div role="separator" class="divider col-12"></div>
+				  <div class="col-12 text-left">
+                    <a href="#"><i class="fa fa-power-off"></i> Logout</a>
+                  </div>				
                 </div>
-                <div class="reset-pass">
-                      <a href="#">Forgot your password?</a>
-                    </div>
-                <div class="field padding-bottom--24">
-                  <input type="submit" name="submit" value="Login">
-                </div>
-                <div class="field">
-                </div>
-                <?php echo form_close();?>
-            </div>
-          </div>
-        </div>
+                <!-- /.row -->
+              </li>
+            </ul>
+          </li>
+          <!-- Control Sidebar Toggle Button -->
+          <li>
+            <a href="#" data-toggle="control-sidebar"><i class="fa fa-cog fa-spin"></i></a>
+          </li>
+        </ul>
       </div>
-    </div>
+    </nav>
+  </header>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+    <!-- sidebar-->
+    <section class="sidebar">
+      
+      <!-- sidebar menu-->
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="user-profile treeview">
+          <a href="#">
+			<img src="../images/user5-128x128.jpg" alt="user">
+            <span>Juliya Brus</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+		  <ul class="treeview-menu">
+            <li><a href="javascript:void()"><i class="fa fa-user mr-5"></i>My Profile </a></li>
+			<li><a href="javascript:void()"><i class="fa fa-money mr-5"></i>My Balance</a></li>
+			<li><a href="javascript:void()"><i class="fa fa-envelope-open mr-5"></i>Inbox</a></li>
+			<li><a href="javascript:void()"><i class="fa fa-cog mr-5"></i>Account Setting</a></li>
+			<li><a href="javascript:void()"><i class="fa fa-power-off mr-5"></i>Logout</a></li>
+          </ul>
+        </li>
+        <li class="header nav-small-cap">PERSONAL</li>
+        <li class="active">
+          <a href="----------">
+            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-th"></i>
+            <span>App</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="----------"><i class="fa fa-circle-thin"></i>Chat app</a></li>
+            <li><a href="----------"><i class="fa fa-circle-thin"></i>Contact / Employee</a></li>
+            <li><a href="----------"><i class="fa fa-circle-thin"></i>Support Ticket</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-envelope"></i> <span>Mailbox</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="-----------"><i class="fa fa-circle-thin"></i>Inbox</a></li>
+            <li><a href="-----------"><i class="fa fa-circle-thin"></i>Compose</a></li>
+            <li><a href="-----------"><i class="fa fa-circle-thin"></i>Read</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-laptop"></i>
+            <span>UI Elements</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="pages/UI/badges.html"><i class="fa fa-circle-thin"></i>Badges</a></li>
+            <li><a href="pages/UI/border-utilities.html"><i class="fa fa-circle-thin"></i>Border</a></li>
+            <li><a href="pages/UI/buttons.html"><i class="fa fa-circle-thin"></i>Buttons</a></li>			
+            <li><a href="pages/UI/bootstrap-switch.html"><i class="fa fa-circle-thin"></i>Bootstrap Switch</a></li>
+          </ul>
+        </li>
+        <li class="header nav-small-cap">FORMS, TABLE & LAYOUTS</li>
+		<li class="treeview">
+          <a href="#">
+            <i class="fa fa-bars"></i>
+            <span>Widgets</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="-------------"><i class="fa fa-circle-thin"></i>Blog</a></li>
+            <li><a href="-------------"><i class="fa fa-circle-thin"></i>Chart</a></li>
+          </ul>
+        </li>	
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>Tables</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="----------"><i class="fa fa-circle-thin"></i>Simple tables</a></li>
+            <li><a href="----------"><i class="fa fa-circle-thin"></i>Data tables</a></li>
+          </ul>
+        </li>
+
+		<li class="header nav-small-cap">EXTRA COMPONENTS</li>
+      
+		<li class="treeview">
+          <a href="#">
+            <i class="fa fa-file"></i> <span>Sample Pages</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="-----------"><i class="fa fa-circle-thin"></i>Blank</a></li>
+            <li><a href="-----------"><i class="fa fa-circle-thin"></i>Coming Soon</a></li>        
+			<li class="treeview">
+              <a href="#"><i class="fa fa-circle-thin"></i>Error Pages 
+                <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="----------"><i class="fa fa-circle"></i>Maintenance</a></li>		  
+              </ul>
+            </li> 
+          </ul>
+        </li>
+      </ul>
+    </section>
+  </aside>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Dashboard
+        <small>Control panel</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="breadcrumb-item active">Dashboard</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+	  <div class="row">
+
+		<div class="col-xl-3 col-md-6 col-12 ">
+        </div>
+		
+	  </div>
+			
+		
+		<div class="col-12 col-lg-3"> 
+    
+      <!-- /.row -->	      
+	</section>
+    <!-- /.content -->
   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div class="pull-right d-none d-sm-inline-block">
+        <ul class="nav nav-primary nav-dotted nav-dot-separated justify-content-center justify-content-md-end">
+		  <li class="nav-item">
+			<a class="nav-link" href="javascript:void(0)">FAQ</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#">Purchase Now</a>
+		  </li>
+		</ul>
+    </div>
+	  &copy; 2018 <a href="https://www.multipurposethemes.com/">Multi-Purpose Themes</a>. All Rights Reserved.
+  </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-light">
+    <!-- Create the tabs -->
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <!-- Home tab content -->
+      <div class="tab-pane" id="control-sidebar-home-tab">
+
+        <!-- /.control-sidebar-menu -->
+
+      </div>
+      <!-- /.tab-pane -->
+      <!-- Stats tab content -->
+
+  </aside>
+  <!-- /.control-sidebar -->
+  
+  <!-- Add the sidebar's background. This div must be placed immediately after the control sidebar -->
+  
+</div>
+<!-- ./wrapper -->
+  	
+	 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	  
+	<!-- jQuery 3 -->
+	<script src="../assets/vendor_components/jquery-3.3.1/jquery-3.3.1.js"></script>
+	
+	<!-- jQuery UI 1.11.4 -->
+	<script src="../assets/vendor_components/jquery-ui/jquery-ui.js"></script>
+	
+	<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+	<script>
+	  $.widget.bridge('uibutton', $.ui.button);
+	</script>
+	
+	<!-- popper -->
+	<script src="../assets/vendor_components/popper/dist/popper.min.js"></script>
+	
+	<!-- Bootstrap 4.0-->
+	<script src="../assets/vendor_components/bootstrap/dist/js/bootstrap.js"></script>	
+	
+	<!-- Slimscroll -->
+	<script src="../assets/vendor_components/jquery-slimscroll/jquery.slimscroll.js"></script>
+	
+	<!-- FastClick -->
+	<script src="../assets/vendor_components/fastclick/lib/fastclick.js"></script>
+	
+	<!-- Sparkline -->
+	<script src="../assets/vendor_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+	
+	<!-- EChartJS JavaScript -->
+	<script src="../assets/vendor_components/echarts/dist/echarts-en.min.js"></script>
+	<script src="../assets/vendor_components/echarts/echarts-liquidfill.min.js"></script>
+	
+	<!-- peity -->
+	<script src="../assets/vendor_components/jquery.peity/jquery.peity.js"></script>
+	
+	<!-- Morris.js charts -->
+	<script src="../assets/vendor_components/raphael/raphael.min.js"></script>
+	<script src="../assets/vendor_components/morris.js/morris.min.js"></script>
+	
+    <!-- Vector map JavaScript -->
+    <script src="../assets/vendor_components/jvectormap/lib2/jquery-jvectormap-2.0.2.min.js"></script>
+    <script src="../assets/vendor_components/jvectormap/lib2/jquery-jvectormap-us-aea-en.js"></script>
+	
+	<!-- SoftMaterial admin App -->
+	<script src="js/template.js"></script>
+	
+	<!-- SoftMaterial admin dashboard demo (This is only for demo purposes) -->
+	<script src="js/pages/dashboard.js"></script>
+	
+	<!-- SoftMaterial admin for demo purposes -->
+	<script src="js/demo.js"></script>	
+
+

@@ -45,10 +45,10 @@ class Login extends CI_Controller {
 			
 			$this->load->helper('security'); 
 			$this->load->library('form_validation');
-			$this->form_validation->set_error_delimiters('<div style="border-radius: 5px;" class="alert alert-warning fade in">
+			$this->form_validation->set_error_delimiters('<div style="border-radius: 5px;  border: 1px solid red;" class="alert alert-danger in">
 
-								<i class="fa-fw fa fa-times"></i>
-								<strong>Error!</strong><br />', '</div>');
+								<i style="color:red;" class="fas fa-exclamation-triangle""></i>
+								<strong style="color:red;">Error!</strong><br />', '</div>');
 			$this->form_validation->set_rules('userr', 'Username', 'trim|required|xss_clean');
 			$this->form_validation->set_rules('pass', 'Password', 'trim|required|alpha_numeric|xss_clean');
 			
@@ -77,15 +77,15 @@ class Login extends CI_Controller {
 					
 					if($usrData['value']=='b'){
 
-						$this->session->set_flashdata('msg_error','<div style="border-radius: 5px;" class="alert alert-warning fade in">
-								<i class="fa-fw fa fa-times"></i>
-								<strong>Error!</strong><br />แอคเคาท์นี้ถูกระงับ<br />Account is baned.</div>');
+						$this->session->set_flashdata('msg_error','<div style="border-radius: 5px;border: 1px solid red;" class="alert alert-danger in">
+								<i style="color:red;" class="fas fa-exclamation-triangle""></i>
+								<strong style="color:red;">Error!</strong><br />แอคเคาท์นี้ถูกระงับ<br />Account is baned.</div>');
 						
 					}else{
 
-						$this->session->set_flashdata('msg_error','<div style="border-radius: 5px;" class="alert alert-warning fade in">
-								<i class="fa-fw fa fa-times"></i>
-								<strong>Error!</strong><br />รหัสผ่านไม่ถูกต้อง กรุณาทำการตรวจสอบข้อมูลอีกครั้ง <br />Invalid Account : Please check your account correctly.</div>');
+						$this->session->set_flashdata('msg_error','<div style="border-radius: 5px;border: 1px solid red;" class="alert alert-danger in">
+								<i style="color:red;" class="fas fa-exclamation-triangle""></i>
+								<strong style="color:red;">Error!</strong><br />รหัสผ่านไม่ถูกต้อง กรุณาทำการตรวจสอบข้อมูลอีกครั้ง <br />Invalid Account : Please check your account correctly.</div>');
 					}
 					redirect('login/usera');
 					

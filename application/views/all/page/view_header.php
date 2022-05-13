@@ -1,140 +1,89 @@
-<style>
-    .xxx{
-        background: #00FA87;
-        margin-left:168px;
-    }
-    .xxx2{
-        background: #6DD100;
-    }
-    .xxx3{
-      width: 100%;
-    }
-    .container{
-        position: absolute;
-        top: 10%;
-        left: 10%;
-        width:50% ;
-    }
-    .text{
-        color: white;
-    }
-    .topnav {
-  overflow: hidden;
-  background-color: #444444;
-}
-.topnav a {
-  float: left;
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
 
-.topnav a:hover {
-  background-color: #202020;
-  color: white;
-}
+  <header class="main-header">
+    <!-- Logo -->
+    <a href="---------" class="logo">
+      <!-- mini logo -->
+	  <b class="logo-mini">
+		  <span class="light-logo"><img src="<?php echo base_url(); ?>./help/page/img/help.png" alt="logo"></span>
+	  </b>
+      <!-- logo-->
+      <span class="logo-lg">
+		  <img src="https://www.prachachat.net/wp-content/uploads/2020/07/%E0%B8%95%E0%B8%B9%E0%B9%88-2222-2.jpg" alt="logo" class="light-logo">
+	  	  <img src="https://www.prachachat.net/wp-content/uploads/2020/07/%E0%B8%95%E0%B8%B9%E0%B9%88-2222-2.jpg" alt="logo" class="dark-logo">
+	  </span>
+    </a>
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-static-top">
+	  	
+      <!-- Sidebar toggle button-->
+		  <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+			<span class="sr-only">Toggle navigation</span>
+		  </a>	
+		
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+		  
+		  <li class="search-box">
+            <a class="nav-link hidden-sm-down" href="javascript:void(0)"><i class="mdi mdi-magnify"></i></a>
+            <form class="app-search" style="display: none;">
+                <input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="ti-close"></i></a>
+			</form>
+          </li>			
+		  
+          <!-- Messages -->
+ 
+          <!-- Notifications -->
+    
+          <!-- Tasks-->
+     
+		  <!-- User Account-->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="https://www.prachachat.net/wp-content/uploads/2020/07/%E0%B8%95%E0%B8%B9%E0%B9%88-2222-2.jpg" class="user-image rounded-circle" alt="User Image">
+            </a>
+            <ul class="dropdown-menu scale-up">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="https://www.prachachat.net/wp-content/uploads/2020/07/%E0%B8%95%E0%B8%B9%E0%B9%88-2222-2.jpg" class="float-left rounded-circle" alt="User Image">
 
-.topnav a.active {
-  background-color: #2196F3;
-  color: black;
-}
+                <p>
+                  Juliya Brus
+                
+                  <a href="#" class="btn btn-danger btn-sm btn-rounded">View Profile</a>
+                </p>
+              </li>
+              <!-- Menu Body -->
+              <li class="user-body">
+                <div class="row no-gutters">
+                  <div class="col-12 text-left">
+                    <a href="#"><i class="ion ion-person"></i> My Profile</a>
+                  </div>
+                  <div class="col-12 text-left">
+                    <a href="#"><i class="ion ion-email-unread"></i> Inbox</a>
+                  </div>
+                  <div class="col-12 text-left">
+                    <a href="#"><i class="ion ion-settings"></i> Setting</a>
+                  </div>
+				<div role="separator" class="divider col-12"></div>
+				  <div class="col-12 text-left">
+                    <a href="#"><i class="ti-settings"></i> Account Setting</a>
+                  </div>
+				<div role="separator" class="divider col-12"></div>
+				  <div class="col-12 text-left">
+                    <a href="#"><i class="fa fa-power-off"></i> Logout</a>
+                  </div>				
+                </div>
+                <!-- /.row -->
+              </li>
+            </ul>
+          </li>
+          <!-- Control Sidebar Toggle Button -->
+          <li>
+            <a href="#" data-toggle="control-sidebar"><i class="fa fa-cog fa-spin"></i></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  
 
-.topnav .search-container {
-  float: right;
-}
-
-.topnav input[type=text] {
-  padding: 6px;
-  margin-top: 8px;
-  font-size: 17px;
-  border: none;
-}
-
-.topnav .search-container button {
-  float: right;
-  padding: 6px 10px;
-  margin-top: 8px;
-  margin-right: 16px;
-  background: #ddd;
-  font-size: 17px;
-  border: none;
-  cursor: pointer;
-}
-
-.topnav .search-container button:hover {
-  background: #ccc;
-}
-
-@media screen and (max-width: 600px) {
-  .topnav .search-container {
-    float: none;
-  }
-  .topnav a, .topnav input[type=text], .topnav .search-container button {
-    float: none;
-    display: block;
-    text-align: left;
-    width: 100%;
-    margin: 0;
-    padding: 14px;
-  }
-  .topnav input[type=text] {
-    border: 1px solid #ccc;  
-  }
-}
-.top{
-    position: absolute;
-    top: 10px;
-}
-.t{
-	position:absolute;
-    top:-15px;
-    left:42%;
-    z-index:3;
-	font-size:50px;
-	color:#01BEB1;
-}
-.t2{
-	position:absolute;
-    top:-1px;
-    left:56%;
-    z-index:4;
-	font-size:15px;
-	color:#FF8D0E;
-}
-.color2 {
-  background-color: white;
-}
-.bbb2{
-   border-style: solid;
-   border: 2px solid white;
-}
-.color3{
-  color:white;
-}
-.t3{
-  position:absolute;
-    top:25px;
-    left:5px;
-    z-index:5;
-	font-size:13px;
-	color:white;
-}
-.t4{
-  position:absolute;
-    top:5px;
-    left:25px;
-    z-index:6;
-	font-size:13px;
-	color:white;
-}
-</style>
-<div  class="topnav">
-  <a style="float:right" class="text" href="#contact"><?php echo "ผู้ใช้:"." ".$this->session->userdata('sessName');?></a>
-</div>
-<div class="t"><b>Helpdesk</b></div>
-<div class="t2">System</div>
-<div class="t3"id="date"></div>
-<div class="t4"id="time"></div>
