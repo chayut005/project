@@ -44,6 +44,12 @@
 	  
 	<!-- weather weather -->
 	<link rel="stylesheet" href="<?php echo base_url() . $css_url; ?>weather-icons.css">	
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="<?php echo base_url() . $css_url; ?>font-awesome.css">	
+
+	  <!-- flag-icon-->
+	  <link rel="stylesheet" href="<?php echo base_url() . $css_url; ?>flag-icon.css">
    
     <!-- Vector CSS -->
     <link href="<?php echo base_url() . $css_url; ?>jquery-jvectormap-2.0.2.css" rel="stylesheet" />

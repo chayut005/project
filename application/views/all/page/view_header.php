@@ -39,12 +39,12 @@
 		  <!-- User Account-->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="https://www.prachachat.net/wp-content/uploads/2020/07/%E0%B8%95%E0%B8%B9%E0%B9%88-2222-2.jpg" class="user-image rounded-circle" alt="User Image">
+              <img src="https://i1.sndcdn.com/avatars-000609285429-droihf-t500x500.jpg" class="user-image rounded-circle" alt="User Image">
             </a>
             <ul class="dropdown-menu scale-up">
               <!-- User image -->
               <li class="user-header">
-                <img src="https://www.prachachat.net/wp-content/uploads/2020/07/%E0%B8%95%E0%B8%B9%E0%B9%88-2222-2.jpg" class="float-left rounded-circle" alt="User Image">
+                <img src="https://i1.sndcdn.com/avatars-000609285429-droihf-t500x500.jpg" class="float-left rounded-circle" alt="User Image">
 
                 <p>
                   Juliya Brus
