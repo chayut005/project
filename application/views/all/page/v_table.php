@@ -2,6 +2,7 @@
     .vvv{
       font-size:12px;
       background-color: white;
+	  text-align:center;
     }
     .vvv2{
       color:black;
@@ -14,11 +15,23 @@
 		width: 40px;
 		}
 </style>
-<link rel="stylesheet" type="text/css" href="fonts/style.css">
-		<link rel="stylesheet" type="text/css" href="css/main-style.css">
-		<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
 		
-<div class=" vvv2">
+		
+ <!-- Content Wrapper. Contains page content -->
+ <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <span class="light-logo"><img src="<?php echo base_url();?>./help/page/img/xnxx.png"height="20" alt="logo"></span>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>
+        <li class="breadcrumb-item active">Dashboard</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+	      
+	<div class=" vvv2">
     <table id="myTable" class="display vvv" style="width: 100%;">
     <thead>
   <tr>
@@ -76,3 +89,6 @@
 			</tbody>
     </table>
 </div>
+	</section>
+    <!-- /.content -->
+  </div>

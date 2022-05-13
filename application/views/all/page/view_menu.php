@@ -95,7 +95,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="----------"><i class="fa fa-circle-thin"></i>Simple tables</a></li>
-            <li><a href="----------"><i class="fa fa-circle-thin"></i>Data tables</a></li>
+            <li><a href="<?php echo site_url('table/table'); ?>"><i class="fa fa-circle-thin"></i>Data tables</a></li>
           </ul>
         </li>
 

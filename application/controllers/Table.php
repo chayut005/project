@@ -46,10 +46,10 @@ class Table extends CI_Controller {
 		$setTitle = strtoupper(str_replace('_', ' ', $this->router->fetch_method()));
 		$this->template->set_master_template('all/'. $this->theme .'/blank_table.php');
 		$this->template->write('page_title', ' TBKK | '.$setTitle.'');
+		$this->template->write_view('page_header', 'all/'. $this->theme .'/view_header.php');
 		$this->template->write_view('page_menu', 'all/'. $this->theme .'/view_menu.php');
 		$this->template->write_view('page_content', 'all/'. $this->theme .'/v_table.php', $data);
-		$this->template->write_view('page_footer', 'all/'. $this->theme .'/view_footer.php');
-
+        $this->template->write_view('page_footer', 'all/'. $this->theme .'/view_footer.php');
 		$this->template->render();
 
 		}
