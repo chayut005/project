@@ -56,6 +56,7 @@
 	
 	<!-- Morris charts -->
 	<link rel="stylesheet" href="<?php echo base_url() . $css_url; ?>morris.css"> 	
+	<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

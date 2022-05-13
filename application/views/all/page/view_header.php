@@ -1,10 +1,10 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="---------" class="logo">
+    <a href="<?php echo site_url('manage/home'); ?>" class="logo">
       <!-- mini logo -->
 	  <b class="logo-mini">
-		  <span class="light-logo"><img src="<?php echo base_url(); ?>./help/page/img/help.png" alt="logo"></span>
+		  <span class="light-logo"><img src="<?php echo base_url(); ?>./help/page/img/helpx.png" alt="logo"></span>
 	  </b>
       <!-- logo-->
       <span class="logo-lg">
@@ -70,7 +70,7 @@
                   </div>
 				<div role="separator" class="divider col-12"></div>
 				  <div class="col-12 text-left">
-                    <a href="#"><i class="fa fa-power-off"></i> Logout</a>
+                    <a href="<?php echo site_url('manage/logout'); ?>"><i class="fa fa-power-off"></i> Logout</a>
                   </div>				
                 </div>
                 <!-- /.row -->

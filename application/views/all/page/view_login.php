@@ -271,7 +271,7 @@ a.ssolink {
       <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
         <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
           <h1><b class="font">Helpdesk</b></h1>
-          <h2 class="color">System</h2>
+          <span class="light-logo"><img src="<?php echo base_url();?>./help/page/img/xnxx.png"height="20" alt="logo"></span>
         </div>
         <div class="formbg-outer">
           <div class="formbg">

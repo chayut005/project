@@ -4,12 +4,9 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>
-        Dashboard
-        <small>Control panel</small>
-      </h1>
+      <span class="light-logo"><img src="<?php echo base_url();?>./help/page/img/xnxx.png"height="20" alt="logo"></span>
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>
         <li class="breadcrumb-item active">Dashboard</li>
       </ol>
     </section>
@@ -19,12 +16,18 @@
 	  <div class="row">
 
 		<div class="col-xl-3 col-md-6 col-12 ">
+
+
+
+
+
+        
         </div>
 		
 	  </div>
 			
 		
-		<div class="col-12 col-lg-3"> 
+ 
     
       <!-- /.row -->	      
 	</section>
