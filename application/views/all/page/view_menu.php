@@ -20,16 +20,13 @@
 		  <ul class="treeview-menu">
             <li><a href="javascript:void()"><i class="fa fa-user mr-5"></i>My Profile </a></li>
 			<li><a href="javascript:void()"><i class="fa fa-cog mr-5"></i>Account Setting</a></li>
-			<li><a href="javascript:void()"><i class="fa fa-power-off mr-5"></i>Logout</a></li>
+			<li><a href="<?php echo site_url('manage/logout'); ?>"><i class="fa fa-power-off mr-5"></i>Logout</a></li>
           </ul>
         </li>
         <li class="header nav-small-cap">PERSONAL</li>
-        <li class="treeview">
-          <a href="----------">
-            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-right pull-right"></i>
-            </span>
+        <li class="active">
+          <a href="<?php echo site_url('manage/home'); ?>">
+            <i class="fa fa-home"></i> <span>Home</span>
           </a>
         </li>
         <li class="treeview">

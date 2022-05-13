@@ -305,6 +305,7 @@ a.ssolink {
                 </div>
 			         	<input type="hidden" name="action" value="<?php echo base64_encode('login');?>"  />
                 <?php echo form_close();?>
+                <span class="light-logo"><img src="<?php echo base_url();?>./help/page/img/xnxx.png"height="15" alt="logo"></span>
             </div>
           </div>
           <h4 class="blue" id="id-company-text" style="text-align:center; font-size:15px;">&copy; TBKK THAILAND</h4>

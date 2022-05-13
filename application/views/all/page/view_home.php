@@ -4,10 +4,7 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>
-        Dashboard
-        <small>Control panel</small>
-      </h1>
+      <span class="light-logo"><img src="<?php echo base_url();?>./help/page/img/xnxx.png"height="30" alt="logo"></span>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="breadcrumb-item active">Dashboard</li>
