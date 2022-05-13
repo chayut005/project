@@ -56,13 +56,14 @@ class Table extends CI_Controller {
 		public function delete($uid){
 
 			$checkSess = $this->connect_db->CheckSession();
+
 	
 			$result = $this->connect_db->deleteUser($uid);
 		
 			if($result!=FALSE){
 				
 				$this->session->set_flashdata('msgResponse', '<div class="alert alert-success fade in"><button class="close" data-dismiss="alert">×</button><i class="fa-fw fa fa-check"></i> <strong>ลบข้อมูลเรียบร้อยค่ะ </strong><br />Success : Delete data success.</div>');
-				redirect('table/teble');	
+				redirect('table/table');	
 			
 			}else{
 				
@@ -71,8 +72,8 @@ class Table extends CI_Controller {
 										×
 									</button>
 									<i class="fa-fw fa fa-times"></i>
-									<strong>Error!</strong><br />เกิดข้อผิดพลาด ไม่สามารถลบข้อมูลได้ค่ะ <br />Error : Delete data not found.</div>');
-				redirect('table/teble');
+									<strong>Error!</strong><br />เกิดข้อผิดพลาด ไม่สามารถลบข้อมูลได้ <br />Error : Delete data not found.</div>');
+				redirect('table/table');
 				
 			}
 		}

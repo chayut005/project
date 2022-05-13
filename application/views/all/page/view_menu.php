@@ -24,7 +24,7 @@
           </ul>
         </li>
         <li class="header nav-small-cap">PERSONAL</li>
-        <li class="active">
+        <li class="tree">
           <a href="<?php echo site_url('manage/home'); ?>">
             <i class="fa fa-home"></i> <span>Home</span>
           </a>
