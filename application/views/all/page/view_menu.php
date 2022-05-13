@@ -11,7 +11,7 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="user-profile treeview">
           <a href="#">
-			<img src="https://www.prachachat.net/wp-content/uploads/2020/07/%E0%B8%95%E0%B8%B9%E0%B9%88-2222-2.jpg" alt="user">
+			<img src="https://i1.sndcdn.com/avatars-000609285429-droihf-t500x500.jpg" alt="user">
             <span>Juliya Brus</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>

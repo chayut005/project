@@ -39,7 +39,7 @@ Project:	SoftMaterial admin - Responsive Admin Template
 /******************* 
 import icon and fonts Styles 
 *******************/
-@import url(../../assets/vendor_components/font-awesome/css/font-awesome.css);
+
 @import url(../../assets/vendor_components/font-awesome/css/font-awesome-animation.css);
 @import url(../../assets/vendor_components/Ionicons/css/ionicons.css);
 @import url(../../assets/vendor_components/themify-icons/themify-icons.css);
