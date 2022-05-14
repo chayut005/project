@@ -45,73 +45,9 @@
 		<script src="assets/js/jquery-2.1.4.min.js"></script> -->
 		
 		<script src="<?php echo base_url() . $js_url; ?>jquery-2.1.4.min.js"></script>
+		<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
-		<!-- <![endif]-->
 
-		<!--[if IE]>
-<script src="assets/js/jquery-1.11.3.min.js"></script>
-<![endif]-->
-
-		<!-- <![endif]-->
-
-		<!--[if IE]>
-<script src="assets/js/jquery-1.11.3.min.js"></script>
-<![endif]-->
-		<script type="text/javascript">
-			if('ontouchstart' in document.documentElement) document.write("<script src='themes/ace_admin/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
-		</script>
-
-		<!-- inline scripts related to this page -->
-		<script type="text/javascript">
-			jQuery(function($) {
-			 $(document).on('click', '.toolbar a[data-target]', function(e) {
-				e.preventDefault();
-				var target = $(this).data('target');
-				$('.widget-box.visible').removeClass('visible');//hide others
-				$(target).addClass('visible');//show target
-			 });
-			});
-			
-			
-			
-			//you don't need this, just used for changing background
-			jQuery(function($) {
-			 $('#btn-login-dark').on('click', function(e) {
-				$('body').attr('class', 'login-layout');
-				$('#id-text2').attr('class', 'white');
-				$('#id-company-text').attr('class', 'blue');
-				
-				e.preventDefault();
-			 });
-			 $('#btn-login-light').on('click', function(e) {
-				$('body').attr('class', 'login-layout light-login');
-				$('#id-text2').attr('class', 'grey');
-				$('#id-company-text').attr('class', 'blue');
-				
-				e.preventDefault();
-			 });
-			 $('#btn-login-blur').on('click', function(e) {
-				$('body').attr('class', 'login-layout blur-login');
-				$('#id-text2').attr('class', 'white');
-				$('#id-company-text').attr('class', 'light-blue');
-				
-				e.preventDefault();
-			 });
-			 
-			});
-		</script>
-
-		<script>
-			// materialize 000
-
-// https://pixinvent.com/materialize-material-design-admin-template/landing/
-
-console.clear();
-
-$(document).ready(function(){
-   $('.sidenav').sidenav();
- });
-		</script>
 		</body>
 
 

@@ -8,12 +8,8 @@ class Connect_db extends CI_Model {
 
 	public function test()
 	{
-		redirect('manage');
-				
+		redirect('manage');	
     }
-	
-
-
 	 public function Login($usr='',$pwd='')
     {
 		$p['usr'] = trim($usr);
@@ -44,15 +40,10 @@ class Connect_db extends CI_Model {
     }
 	public function Logout()
 	{	
-		/*$sqlDelFile = "DELETE FROM upload_temp_filename WHERE u_id='".$this->session->userdata('sessUsrId')."';";
-		$excDelFile = $this->db->query($sqlDelFile);*/
-		
 		$sqlLastAcc = "UPDATE sys_users SET last_access=NOW() WHERE username='".$this->session->userdata('sessUsr')."';";
-            $this->session->unset_userdata($sqlLastAcc);
+			$this->session->unset_userdata($sqlLastAcc);
             $this->session->sess_destroy();
-
             redirect('login/usera');
-		
 	}
 
 	public function CheckPermission($para){
@@ -86,8 +77,7 @@ class Connect_db extends CI_Model {
     public function CheckSession() 
     {
         if($this->session->userdata('loggedIn')!="OK") {
-					
-           redirect('login/usera');
+			redirect('login/usera');
 		   return FALSE;
 		   
         }else{	return TRUE; 	}

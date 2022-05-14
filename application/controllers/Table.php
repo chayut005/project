@@ -56,7 +56,7 @@ class Table extends CI_Controller {
 		public function delete($uid){
 
 			$checkSess = $this->connect_db->CheckSession();
-
+			$this->connect_db->CheckPermission($this->session->userdata('sessUsrId'));
 	
 			$result = $this->connect_db->deleteUser($uid);
 		

@@ -18,8 +18,7 @@ class Manage extends CI_Controller {
 		$this->image_url = $this->config->item('image_url');
 		
 
-		$this->img_path = $this->image_url;
-
+	
 		$this->template->write('js_url', $this->js_url);
         $this->template->write('css_url', $this->css_url);
 		$this->template->write('asset_url', $this->asset_url);
@@ -38,6 +37,7 @@ class Manage extends CI_Controller {
 		$data['str_validate'] = '';
 		
 		$checkSess = $this->connect_db->CheckSession();
+
 		
 		$setTitle = strtoupper(str_replace('_', ' ', $this->router->fetch_method()));
 		$this->template->write('page_title', ' TBKK | '.$setTitle.'');
@@ -50,7 +50,6 @@ class Manage extends CI_Controller {
 	public function Home(){
 
 		$data['str_validate'] = '';
-		$data['img_path'] = $this->img_path;
 		
 		$checkSess = $this->connect_db->CheckSession();
 		
@@ -65,7 +64,6 @@ class Manage extends CI_Controller {
 
 
 	public function Logout(){
-		
 		$this->connect_db->Logout();		
     }
 

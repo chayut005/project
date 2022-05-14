@@ -137,7 +137,8 @@ th:focus, td:focus, tr:focus{
       <span class="light-logo"><img src="<?php echo base_url();?>./help/page/img/xnxx.png"height="20" alt="logo"></span>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>
-        <li class="breadcrumb-item active">Dashboard</li>
+        <li class="breadcrumb-item active">table</li>
+        <li class="breadcrumb-item active">datatable</li>
       </ol>
     </section>
 

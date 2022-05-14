@@ -70,6 +70,7 @@ class Login extends CI_Controller {
 					$arrData = array('sessName'=> $usrData['firstname'], 'sessUsr'=> $usrData['username'], 'sessUsrId'=>$usrData['su_id'],'sessGroup'=>$usrData['sug_id'], 'sessLastacc'=> $usrData['last_access'], 'loggedIn' => "OK");				
 					
 					$this->session->set_userdata($arrData);
+					print_r($arrData);
 					redirect('login');
 
 																		
