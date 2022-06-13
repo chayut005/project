@@ -37,22 +37,6 @@ class Manage extends CI_Controller {
 		$data['str_validate'] = '';
 		
 		$checkSess = $this->connect_db->CheckSession();
-
-		
-		$setTitle = strtoupper(str_replace('_', ' ', $this->router->fetch_method()));
-		$this->template->write('page_title', ' TBKK | '.$setTitle.'');
-		$this->template->write_view('page_header', 'all/'. $this->theme .'/view_header.php');
-		$this->template->write_view('page_menu', 'all/'. $this->theme .'/view_menu.php');
-		$this->template->write_view('page_content', 'all/'. $this->theme .'/view_home.php', $data);
-        $this->template->write_view('page_footer', 'all/'. $this->theme .'/view_footer.php');
-		$this->template->render();
-	}
-	public function Home(){
-
-		$data['str_validate'] = '';
-		
-		$checkSess = $this->connect_db->CheckSession();
-		
 		$setTitle = strtoupper(str_replace('_', ' ', $this->router->fetch_method()));
 		$this->template->write('page_title', ' TBKK | '.$setTitle.'');
 		$this->template->write_view('page_header', 'all/'. $this->theme .'/view_header.php');

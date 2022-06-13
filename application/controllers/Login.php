@@ -1,4 +1,7 @@
 <?php
+
+use LDAP\Result;
+
 defined('BASEPATH')OR exit('No direct script access allowed');
 
 class Login extends CI_Controller {
@@ -34,9 +37,9 @@ class Login extends CI_Controller {
 					
 	}
 
-	public function usera()
+	public function user()
 	{
-
+	
 		$data['str_validate'] = '';
 
 		$action = base64_decode($this->input->post('action'));
@@ -54,7 +57,6 @@ class Login extends CI_Controller {
 			
 			$this->form_validation->set_message('required', '%s ไม่มีข้อมูล กรุณาทำการตรวจสอบ');
 			$this->form_validation->set_message('alpha_numeric', '%s ห้ามใช้ตัวอักษรอักขระพิเศษ'); 
-			
 			if ($this->form_validation->run() == FALSE){
 				
 				$data['str_validate'] = FALSE;
@@ -70,7 +72,8 @@ class Login extends CI_Controller {
 					$arrData = array('sessName'=> $usrData['firstname'], 'sessUsr'=> $usrData['username'], 'sessUsrId'=>$usrData['su_id'],'sessGroup'=>$usrData['sug_id'], 'sessLastacc'=> $usrData['last_access'], 'loggedIn' => "OK");				
 					
 					$this->session->set_userdata($arrData);
-					print_r($arrData);
+					var_dump($arrData);
+
 					redirect('login');
 
 																		
@@ -88,7 +91,7 @@ class Login extends CI_Controller {
 								<i style="color:red;" class="fas fa-exclamation-triangle""></i>
 								<strong style="color:red;">Error!</strong><br />รหัสผ่านไม่ถูกต้อง กรุณาทำการตรวจสอบข้อมูลอีกครั้ง <br />Invalid Account : Please check your account correctly.</div>');
 					}
-					redirect('login/usera');
+					redirect('login/user');
 					
 					
 						}

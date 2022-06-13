@@ -531,10 +531,10 @@ $config['rewrite_short_tags'] = FALSE;
 */
 $config['proxy_ips'] = '';
 
-$theme = 'page';
+$theme = 'softmat';
 
 $config['theme'] = $theme;
-$config['asset_url'] = 'help/'.$theme .'/';
-$config['js_url'] = 'help/'.$theme .'/js/';
-$config['css_url'] = 'help/'.$theme .'/css/';
-$config['image_url'] = 'help/'.$theme .'/img/';
+$config['asset_url'] = 'themes/'.$theme .'/';
+$config['js_url'] = 'themes/'.$theme .'/js/';
+$config['css_url'] = 'themes/'.$theme .'/css/';
+$config['image_url'] = 'themes/'.$theme .'/img/';

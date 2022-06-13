@@ -59,7 +59,7 @@ $template['active_template'] = 'public';
   |--------------------------------------------------------------------------
  */
 //public template
-$template['public']['template'] = 'all/page/tpl_backend.php';
+$template['public']['template'] = 'all/softmat/tpl_backend.php';
 $template['public']['regions'] = array(
 	'js_url',
 	'css_url',
