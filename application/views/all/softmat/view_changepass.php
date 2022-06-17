@@ -31,7 +31,7 @@
   </section>
 
   <!-- Main content -->
-  <section class="content">
+  <section class="content ">
     <?php if ($str_validate == FALSE) {
       echo validation_errors();
     } ?>

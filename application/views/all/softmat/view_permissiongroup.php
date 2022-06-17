@@ -85,14 +85,13 @@
 
 
 
+				<!-- data-backdrop="static" ตัวล็อคmodal -->
 
-				<div  id="modal_perGadd" class="modal fade" role="dialog">
+				<div  id="modal_perGadd" class="modal fade" role="dialog" >
 					<div class="modal-dialog">
 						<div class="modal-content">
 						
 							<div  class="modal-body">
-							<button style="font-size:15px;" type="button" class="close glyphicon glyphicon-remove"
-									data-dismiss="modal" aria-hidden="true"></button>
 								<h2 class="font">Add Permissiongroup</h2>
 								<form name="frmMain" id="frmMain" method="post">
 									</label>
@@ -117,9 +116,11 @@
 
 
 
-									<button type="submit" class="bgc btn btn-primary bgc" id="addxx">
+									<button type="submit" class="btn btn-primary bgc" id="addxx">
 										Add
 									</button>
+									<button  type="button" class=" btn btn-primary btnclose"
+									data-dismiss="modal" aria-hidden="true">close</button>
 									<input id="action" type="hidden" name="action"
 										value="<?php echo base64_encode('addPermissiongroup'); ?>" />
 								</form>
@@ -153,14 +154,12 @@
 
 
 
-
-				<div id="modal_perGedit" class="modal fade" role="dialog">
+				<!-- data-backdrop="static" ตัวล็อคmodal -->
+				<div id="modal_perGedit" class="modal fade"role="dialog">
 					<div class="modal-dialog">
 						<div class="modal-content">
 						
 							<div class="modal-body">
-							<button style="font-size:15px;" type="button" class="close glyphicon glyphicon-remove"
-									data-dismiss="modal" aria-hidden="true"></button>
 								<h2 class="font">Edit Permissiongroup</h2>
 								<form action="" id="form_editpg" method="post">
 
@@ -194,6 +193,8 @@
 										<button id="editpg" type="submit" class="btn btn-primary bgc">
 											Save
 										</button>
+										<button  type="button" class=" btn btn-primary btnclose"
+									data-dismiss="modal" aria-hidden="true">close</button>
 										<input type="hidden" name="action"
 											value="<?php echo base64_encode('editPermissionGroup'); ?>" />
 									</footer>
@@ -255,12 +256,12 @@ $(document).ready(function(){
 									console.log(data);
 									if(row.enable === '0'){
 										// var xxx=data;
-										html_data = '<div  style="color:white; background: linear-gradient(45deg, #FFC43B, #FF9D30 , #FF7530);border-radius:30px;height: 25px;margin:auto;max-width: 100px;padding: 3px;">disable</div>';
+										html_data = '<div  style="box-shadow: 2px 4px 1px lightblue;color:white; background: linear-gradient(45deg, #FFC43B, #FF9D30 , #FF7530);border-radius:30px;height: 25px;margin:auto;max-width: 100px;padding: 3px;">disable</div>';
 
 										// console.log("dissssssss"+" "+xxx);
 									}else{
 										// var xxx2=data;
-										html_data = '<div  style="color:white; background: linear-gradient(45deg, #6F9EFF, #3868CD , #6F9EFF);border-radius:30px;height: 25px;margin:auto;max-width: 100px;padding: 3px;">enable</div>';
+										html_data = '<div  style="box-shadow: 2px 4px 1px lightblue;color:white; background: linear-gradient(45deg, #6F9EFF, #3868CD , #6F9EFF);border-radius:30px;height: 25px;margin:auto;max-width: 100px;padding: 3px;">enable</div>';
 
 										// console.log("2222222"+" "+xxx2);
 									}

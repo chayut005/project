@@ -30,28 +30,88 @@ class Form extends CI_Controller {
 		$table = array ("data" => $datatable);
 		echo json_encode( $table ); 
 	}
+	
+	public function check_quest(){
+		$id=$_POST["id"];
+
+		$checkSess = $this->connect_db->CheckSession();
+		$this->connect_db->CheckPermission($this->session->userdata('sessUsrId'));
+
+		$result = $this->connect_db->check_request($id);
+
+		if($result!=FALSE){
+			
+			echo "suc";
+		
+		}else{
+			
+			echo "error";
+
+		}
+	}
 	public function add_request(){
 		$data['str_validate'] = '';
 		$checkSess = $this->connect_db->CheckSession();
 		$this->connect_db->CheckPermission($this->session->userdata('sessUsrId'));
-		
 		$action = base64_decode($this->input->post('action'));
+		
 
 		if($action=='request'){
-			
-			if($this->input->post('phase')=='phase10'){ $p['phases'] = 'phase10';}
-			if($this->input->post('phase')=='phase8'){ $p['phases'] = 'phase8';}
+			$p['phases'] = $this->input->post('phase');
 			$p['type'] = $this->input->post('types');
 			$p['system'] = $this->input->post('syst');
 			$p['comments'] = $this->input->post('comment');
 			$p['pris'] = $this->input->post('pri');
-			$this->load->library('form_validation');	
-			$this->form_validation->set_error_delimiters('<div class="alert alert-danger ">
-								<a class="close" data-dismiss="alert">
-									×
-								</a>
-								
-								<strong>Error!</strong><br />', '</div>');	
+			// isset($_FILES['image-title']['name']);
+			$p['img'] = $_FILES['image-title']['name'];
+			
+	        
+
+
+			$target_dir = "C:/AppServ/www/project/themes/softmat/view_img/";
+			
+			$target_file = $target_dir . basename($_FILES["image-title"]["name"]);
+			// $uploadOk = 1;
+			$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));  
+			// if(isset($_POST["submit"])) {
+			//   $check = getimagesize($_FILES["image-title"]["tmp_name"]);
+			//   if($check !== false) {
+			// 	echo "File is an image - " . $check["mime"] . ".";
+			// 	$uploadOk = 1;
+			//   } else {
+			// 	echo "File is not an image.";
+			// 	$uploadOk = 0;
+			//   }
+			// }
+			// if (file_exists($target_file)) {
+			//   echo "Sorry, file already exists.";
+			//   $uploadOk = 0;
+			// }
+			// if ($_FILES["image-title"]["size"] > 1000000000000000 ) {
+			//   echo "Sorry, your file is too large.";
+			//   $uploadOk = 0;
+			// }
+			if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
+			//   echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+			//   $uploadOk = 0;
+			// }
+			// if ($uploadOk == 0) {
+			//   echo "Sorry, your file was not uploaded.";
+			// } else {  
+				echo "errimg";
+				exit;
+			}
+		  move_uploaded_file($_FILES["image-title"]["tmp_name"], $target_file);
+			
+		//   echo "The file ". htmlspecialchars( basename( $_FILES["image-title"]["name"])). " has been uploaded.";
+		// 	  } else {
+		// 		echo "The file has been uploaded.";
+		// 	  }
+		//  }
+		//  $image = $this->input->post('image-title');
+		//  $string = substr($target_file , 13);
+
+			$this->load->library('form_validation');		
 			$this->form_validation->set_rules('phase', "", "trim");
 			$this->form_validation->set_rules('types', 'Type', 'is_natural_no_zero');
 			$this->form_validation->set_rules('syst', 'System', 'is_natural_no_zero');
@@ -64,6 +124,7 @@ class Form extends CI_Controller {
 								
 			}else{# form_validation = TRUE
 				
+				// var_dump($p);
 				$lastId = $this->connect_db->submitrequest($p);
 				if($lastId != FALSE){
 					
@@ -86,7 +147,7 @@ class Form extends CI_Controller {
 					echo "err";
 				}				
 			}
-			}
+		}	
 	}
 	public function request(){
 		$sqlSelG = "SELECT * FROM sys_type WHERE tus_id<>'0' AND enable='1';";

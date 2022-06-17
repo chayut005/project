@@ -94,15 +94,10 @@
                             ?>
                             </div>
                    
-                          
-            <!-- <div class="form-group">
-              <label>Upload</label>
-              <input  style="height:200px;" accept=".jpg,.png" multiple class="form-control class='fas fa-upload" name="maintenance" type="file">
-            </div> -->
 
             <div class="file-upload">
           <div class="image-upload-wrap">
-            <input class="file-upload-input" type='file' id="image-title" name="image-title" onchange="readURL(this);" />
+            <input class="file-upload-input"type="file" id="file" name="image-title" onchange="readURL(this);" >
             <div class="drag-text">
               <h3>UPLOAD PICTURE</h3>
             </div>
@@ -135,20 +130,138 @@
             
             <div class="form-group">
             <footer style="padding-top:20px;">
-                <button onclick="addre()" type="submit" class="bgc btn btn-primary">
+                <button id="addre" type="submit" class="bgc btn btn-primary">
                     Submit
                 </button>
                 </footer>
             </div>
             <input type="hidden" name="action" value="<?php echo base64_encode('request');?>"  />
           </form>
+
+
+
+
+
+
+
+
+
+
+<!-- 
+          <form id="form" method="post" enctype="multipart/form-data">
+            <div class="file-upload">
+              <div class="image-upload-wrap">
+                <input class="file-upload-input" type='file' id="image-title" name="image-title" onchange="readURL(this);" />
+   
+                <div class="drag-text">
+                  <h3>UPLOAD PICTURE</h3>
+                </div>
+              </div>
+              <div class="file-upload-content">
+                <img class="file-upload-image" src="#" alt="your image" />
+                <div class="image-title-wrap">
+                  <button type="button" onclick="removeUpload()" class="remove-image">Remove <span id="image-title" name="image-title">UPLOAD PICTURE</span></button>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+            <footer style="padding-top:20px;">
+                <button type="submit" class="bgc btn btn-primary">
+                    Submit
+                </button>
+              
+                </footer>
+            </div>
+
+        </form> -->
+
+
+
+
+
+
+        
           </div>
           </div>
 	</section>
     <!-- /.content -->
   </div>
 
+  <script>
+      $(document).ready(function(){
 
+$("#frmre").on("submit",function(e){
+e.preventDefault();
+var fd = new FormData(this);
+var dt = $("#frmre").serialize();
+var img = $('input[name=image-title]').val();
+
+
+alert(img);
+
+var files = $('#file')[0].files;
+// console.log($("#frmre").serialize());
+//   console.log( new FormData(this));
+// e.preventDefault();0
+
+$.ajax({
+ url:'<?php echo base_url(); ?>Form/add_request',
+type: "POST",
+cache: false,
+data: fd,dt,img,
+  processData: false,
+  contentType: false,
+
+
+success: function(data)  {
+  alert(data)
+  if (data == "suc") {
+					Swal.fire({
+						title: 'Success!',
+						html: "<p>บันทึกข้อมูลเรียบร้อย!</p><p>Success : Add data success.!</p>",
+						icon: 'success',
+						showConfirmButton: false,
+						timer: 1500,
+					})
+					$('input[name=txt_name]').val(" ");
+				} else if (data == "err") {
+					Swal.fire({
+						title: 'Error!',
+						html: "<p>เกิดข้อผิดพลาด ไม่สามารถบันทึกข้อมูลได้!</p><p>Error : Add data not found.!</p>",
+						icon: 'error',
+						showConfirmButton: false,
+						timer: 1500,
+					})
+					$('input[name=txt_name]').val(" ");
+				}else if (data == "errimg") {
+					Swal.fire({
+						title: 'Error!',
+						html: "<p>เกิดข้อผิดพลาด ไฟล์รูปไม่ใช่!</p><p>Error : Add data not found.!</p>",
+						icon: 'error',
+						showConfirmButton: false,
+						timer: 1500,
+					})
+					$('input[name=txt_name]').val(" ");
+				}
+				if (data == "errorT") {
+					Swal.fire({
+						title: 'Error!',
+						html: "<p>ไม่มีข้อมูล กรุณาทำการตรวจสอบด้วย!</p><p>Error :Data not found.!</p>",
+						icon: 'warning',
+						showConfirmButton: false,
+						timer: 1500,
+
+					})
+				}
+			
+
+}       
+});
+
+// }
+});
+})
+ </script>
 
 
 <script>
@@ -209,49 +322,122 @@ $('.image-upload-wrap').bind('dragover', function () {
 
 
 
-  <script>
-		function addre() {
-			event.preventDefault();
-			$.ajax({
-				type: "POST",
-				// dataType: "json",
-				url: '<?php echo base_url(); ?>Form/add_request',
-				data: $("#frmre").serialize(),
-				success: function (datare) {
-					alert(datare);
-					if (datare == "suc") {
-						Swal.fire({
-						title:'Success!',
-						html: "<p>บันทึกข้อมูลเรียบร้อย!</p><p>Success : Add data success.!</p>",
-						icon: 'success',
-						showConfirmButton: false,
-						timer: 1500,
-					})
-						$('input[name=txt_name]').val(" ");
-            $('input[name=comment]').val(" ");
-					} else if (datare == "err") {
-						Swal.fire({
-						title:'Error!',
-						html: "<p>เกิดข้อผิดพลาด ไม่สามารถบันทึกข้อมูลได้!</p><p>Error : Add data not found.!</p>",
-						icon: 'error',
-						showConfirmButton: false,
-						timer: 1500,
-					})
-						$('input[name=txt_name]').val(" ");
-            $('input[name=comment]').val(" ");
-
-					}
-					if (datare == "errorT") {
-						Swal.fire({
-						title:'Error!',
-						html: "<p>ไม่มีข้อมูล กรุณาทำการตรวจสอบด้วย!</p><p>Error :Data not found.!</p>",
-						icon: 'warning',
-						showConfirmButton: false,
-						timer: 1500,
-
-					})
-					}
-				}
-			});
+  <!-- <script>
+    $("#form").on('submit',(function(e) {
+  e.preventDefault();
+  $.ajax({
+         url:'<?php echo base_url(); ?>Form/add_request',
+   type: "POST",
+   data:  new FormData(this),
+   contentType: false,
+         cache: false,
+   processData:false,
+   beforeSend : function()
+   {
+    //$("#preview").fadeOut();
+    $("#err").fadeOut();
+   },
+   success: function(data)
+      {
+    if(data=='invalid')
+    {
+     // invalid file format.
+     $("#err").html("Invalid File !").fadeIn();
     }
+    else
+    {
+     // view uploaded file.
+     $("#preview").html(data).fadeIn();
+     $("#form")[0].reset(); 
+    }
+      },
+     error: function(e) 
+      {
+    $("#err").html(e).fadeIn();
+      }          
+    });
+ })); -->
+
+		<!-- // function addre() {
+    //   var img= $('input[name=image-title]').val();
+		// 	$.ajax({
+		// 		type: "POST",
+		// 		// dataType: "json",
+		// 		url: '<?php echo base_url(); ?>Form/add_request',
+		// 		data:{
+    //       img:img,
+    //       form:form,
+    //     },
+		// 		success: function (datare) {
+		// 			alert(datare);
+		// 			if (datare == "suc") {
+		// 				Swal.fire({
+		// 				title:'Success!',
+		// 				html: "<p>บันทึกข้อมูลเรียบร้อย!</p><p>Success : Add data success.!</p>",
+		// 				icon: 'success',
+		// 				showConfirmButton: false,
+		// 				timer: 1500,
+		// 			})
+    $("from").serialL
+		// 				$('input[name=txt_name]').val(" ");
+    //         $('input[name=comment]').val(" ");
+		// 			} else if (datare == "err") {
+		// 				Swal.fire({
+		// 				title:'Error!',
+		// 				html: "<p>เกิดข้อผิดพลาด ไม่สามารถบันทึกข้อมูลได้!</p><p>Error : Add data not found.!</p>",
+		// 				icon: 'error',
+		// 				showConfirmButton: false,
+		// 				timer: 1500,
+		// 			})
+		// 				$('input[name=txt_name]').val(" ");
+    //         $('input[name=comment]').val(" ");
+
+		// 			}
+		// 			if (datare == "errorT") {
+		// 				Swal.fire({
+		// 				title:'Error!',
+		// 				html: "<p>ไม่มีข้อมูล กรุณาทำการตรวจสอบด้วย!</p><p>Error :Data not found.!</p>",
+		// 				icon: 'warning',
+		// 				showConfirmButton: false,
+		// 				timer: 1500,
+
+		// 			})
+		// 			}
+		// 		}
+		// 	});
+    // } -->
+
+
+
+
+
+<!-- 
+    $(document).ready(function(){
+
+$("#frmre").on("submit",function(e){
+e.preventDefault();
+var fd = new FormData(this);
+var files = $('#file')[0].files;
+// console.log($("#frmre").serialize());
+//   console.log( new FormData(this));
+// e.preventDefault();0
+
+
+if(files.length > 0 ){
+console.log(files.length);
+fd.append('file',files[0]);
+$.ajax({
+ url:'<?php echo base_url(); ?>Form/add_request',
+type: "POST",
+data: fd,
+contentType: false,
+processData: false,
+
+
+//  success: function(data)         
+});
+};
+// }
+});
+}) -->
     </script>

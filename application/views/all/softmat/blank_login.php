@@ -9,6 +9,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 		<link rel="stylesheet" href="<?php echo base_url() . $css_url; ?>bootstrap.min.css" />
 			</head>
+			<script src="<?php echo base_url() . $js_url; ?>jquery-3.6.0.min.js"></script>
 	<body class="login-layout light-login">
 		<?php echo $page_content;?>
 

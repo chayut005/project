@@ -94,7 +94,8 @@ class Permission extends CI_Controller
 			$p['name'] = $this->input->post('txt_name');
 			$p['cont'] = $this->input->post('txt_cont');
 			$p['group'] = $this->input->post('sel_group');
-			$p['enable'] = trim($this->input->post('rad_status'));
+			$p['enable'] = trim($this->input->post('pri'));
+			$p['enable'] = trim($this->input->post('pri'));
 
 			$this->load->library('form_validation');
 			$this->form_validation->set_error_delimiters('<div class="alert alert-danger ">

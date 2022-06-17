@@ -58,6 +58,7 @@
 	.bgc{
 	background: linear-gradient(45deg, #32D6FF, #00ADD8 , #0090CB);
 	border: none;
+	box-shadow: 2px 4px 1px lightblue;
 }
 .font{
         font-family: 'Prompt';
@@ -81,6 +82,19 @@ body{
 		box-shadow: 20px 20px 3px lightblue;
 
 	}
+	.btnclose{
+		
+		border: none;
+	    background: linear-gradient(45deg, #838383, #696969 , #4D4D4D);
+		box-shadow: 2px 4px 1px lightblue;
+	}
+	.background{
+	/* background-color: #FF8D0E; */
+	background-image: url('<?php echo base_url(); ?>./themes/softmat/img/bg4.png');
+	background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-size: cover;
+}
 </style>
 <!-- Left side column. contains the logo and sidebar -->
 <aside class="main-sidebar sidebar position-fixed top-0 left-0 overflow-auto h-100 float-left si fi2">

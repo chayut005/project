@@ -86,8 +86,9 @@
 
 
 
+				<!-- data-backdrop="static" ตัวล็อคmodal -->
 
-		<div id="modal_Gadd" class="modal fade" role="dialog">
+		<div id="modal_Gadd" class="modal fade"  role="dialog">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-body">
@@ -114,9 +115,11 @@
 
 						</fieldset>
 						<footer>
-							<button onclick="addgroup()" type="submit" class="btn btn-primary">
+							<button onclick="addgroup()" type="submit" class="btn btn-primary bgc">
 								Add
 							</button>
+							<button  type="button" class=" btn btn-primary btnclose"
+									data-dismiss="modal" aria-hidden="true">close</button>
 							<input type="hidden" name="action" value="<?php echo base64_encode('addUsergroup'); ?>" />
 						</footer>
 					</div>
@@ -151,13 +154,12 @@
 
 
 
+				<!-- data-backdrop="static" ตัวล็อคmodal -->
 
-<div id="modal_Gedit" class="modal fade" role="dialog">
+<div id="modal_Gedit" class="modal fade"role="dialog" >
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<button style="font-size:15px;" type="button" class="close glyphicon glyphicon-remove"
-					data-dismiss="modal" aria-hidden="true"></button>
 				<h2 class="font">Edit Permissiongroup</h2>
 			</div>
 			<div class="modal-body">
@@ -194,6 +196,8 @@
 						<button type="submit" class="btn btn-primary">
 							Save
 						</button>
+						<button  type="button" class=" btn btn-primary btnclose"
+									data-dismiss="modal" aria-hidden="true">close</button>
 						<input type="hidden" name="action" value="<?php echo base64_encode('editUsergroup'); ?>" />
 					</footer>
 				</div>
@@ -298,10 +302,10 @@
                               "render" : function(data, type, row, meta){
                                 if(type === 'display'){
 									if(row.enable === '0'){
-										data = '<div  style="color:white; background: linear-gradient(45deg, #FFC43B, #FF9D30 , #FF7530);border-radius:30px;height: 25px;margin:auto;max-width: 100px;padding: 3px;">disable</div>';
+										data = '<div  style="box-shadow: 2px 4px 1px lightblue;color:white; background: linear-gradient(45deg, #FFC43B, #FF9D30 , #FF7530);border-radius:30px;height: 25px;margin:auto;max-width: 100px;padding: 3px;">disable</div>';
 
 									}else{
-										data = '<div  style="color:white;background: linear-gradient(45deg, #6F9EFF, #3868CD , #6F9EFF);border-radius:30px;height: 25px;margin:auto;max-width: 100px;padding: 3px;">enable</div>';
+										data = '<div  style="box-shadow: 2px 4px 1px lightblue;color:white;background: linear-gradient(45deg, #6F9EFF, #3868CD , #6F9EFF);border-radius:30px;height: 25px;margin:auto;max-width: 100px;padding: 3px;">enable</div>';
 
 									}
                                 }          

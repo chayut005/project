@@ -11,6 +11,20 @@ class Connect_db extends CI_Model {
 	return $recSel;
 	
 }
+public function check_request($key=''){
+		
+	$this->db->set('status', '0');
+	$this->db->set('date_update', 'NOW()', FALSE);
+	$this->db->where('ma_id', $key);
+	$exc_user = $this->db->update('sys_manage_problems');
+	
+	if ($exc_user){
+		
+		return TRUE;	
+	
+	}else{	return FALSE;	}
+	 
+}
 	public function data_req(){
 		$sqlSel = "SELECT
 		smp.*,
@@ -88,7 +102,7 @@ class Connect_db extends CI_Model {
 				'create_by' => $sid,
 				'date_create' => date('Y-m-d H:i:s'),
 				'date_update' => date('Y-m-d H:i:s'),
-				 'img' =>'1',	
+				 'img' =>$p['img'],	
 				'del_flag' => '1',
 				);
 		
