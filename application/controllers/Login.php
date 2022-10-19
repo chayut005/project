@@ -2,12 +2,13 @@
 
 use LDAP\Result;
 
-defined('BASEPATH')OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Login extends CI_Controller {
-	 
-	private $theme; 
-	 
+class Login extends CI_Controller
+{
+
+	private $theme;
+
 	public function __construct()
 	{
 		parent::__construct();
@@ -24,94 +25,83 @@ class Login extends CI_Controller {
 		$this->img_path = $this->image_url;
 
 		$this->template->write('js_url', $this->js_url);
-        $this->template->write('css_url', $this->css_url);
+		$this->template->write('css_url', $this->css_url);
 		$this->template->write('asset_url', $this->asset_url);
 		$this->template->write('image_url', $this->image_url);
 	}
-	 
 	public function index()
 	{
-		
-		$this->connect_db->checksession();
-		redirect('manage');	
-					
+		redirect('login/user');
 	}
-
 	public function user()
 	{
-	
-		$data['str_validate'] = '';
+		$setTitle = strtoupper($this->router->fetch_method() . ' ' . $this->router->fetch_class());
 
-		$action = base64_decode($this->input->post('action'));
-
-		if ($action == 'login'){
-			
-			$this->load->helper('security'); 
-			$this->load->library('form_validation');
-			$this->form_validation->set_error_delimiters('<div style="border-radius: 5px;  border: 1px solid red;" class="alert alert-danger in">
-
-								<i style="color:red;" class="fas fa-exclamation-triangle""></i>
-								<strong style="color:red;">Error!</strong><br />', '</div>');
-			$this->form_validation->set_rules('userr', 'Username', 'trim|required|xss_clean');
-			$this->form_validation->set_rules('pass', 'Password', 'trim|required|alpha_numeric|xss_clean');
-			
-			$this->form_validation->set_message('required', '%s ไม่มีข้อมูล กรุณาทำการตรวจสอบ');
-			$this->form_validation->set_message('alpha_numeric', '%s ห้ามใช้ตัวอักษรอักขระพิเศษ'); 
-			if ($this->form_validation->run() == FALSE){
-				
-				$data['str_validate'] = FALSE;
-												
-			}else{ 
-
-				$usr = $this->input->post('userr');
-				$pwd = $this->input->post('pass');
-				$usrData = $this->connect_db->Login($usr,$pwd);
-								
-				if($usrData['action'] != 'err') {
-										
-					$arrData = array('sessName'=> $usrData['firstname'], 'sessUsr'=> $usrData['username'], 'sessUsrId'=>$usrData['su_id'],'sessGroup'=>$usrData['sug_id'], 'sessLastacc'=> $usrData['last_access'], 'loggedIn' => "OK");				
-					
-					$this->session->set_userdata($arrData);
-					var_dump($arrData);
-
-					redirect('login');
-
-																		
-				} else {
-					
-					if($usrData['value']=='b'){
-
-						$this->session->set_flashdata('msg_error','<div style="border-radius: 5px;border: 1px solid red;" class="alert alert-danger in">
-								<i style="color:red;" class="fas fa-exclamation-triangle""></i>
-								<strong style="color:red;">Error!</strong><br />แอคเคาท์นี้ถูกระงับ<br />Account is baned.</div>');
-						
-					}else{
-
-						$this->session->set_flashdata('msg_error','<div style="border-radius: 5px;border: 1px solid red;" class="alert alert-danger in">
-								<i style="color:red;" class="fas fa-exclamation-triangle""></i>
-								<strong style="color:red;">Error!</strong><br />รหัสผ่านไม่ถูกต้อง กรุณาทำการตรวจสอบข้อมูลอีกครั้ง <br />Invalid Account : Please check your account correctly.</div>');
-					}
-					redirect('login/user');
-					
-					
-						}
-	
-				}
-				
-			}
-		
-		
-		
-
-		$setTitle = strtoupper($this->router->fetch_method().' '.$this->router->fetch_class());
-		
-		$this->template->set_master_template('all/'. $this->theme .'/blank_login.php');
-		$this->template->write('page_title', 'TBKK | '.$setTitle.'');
-		$this->template->write_view('page_content', 'all/'. $this->theme .'/view_login.php', $data);
+		$this->template->set_master_template('all/' . $this->theme . '/blank_login.php');
+		$this->template->write('page_title', 'CAT | ' . $setTitle . '');
+		$this->template->write_view('page_content', 'all/' . $this->theme . '/view_login.php');
 		$this->template->render();
-
 	}
 
+
+
+
+	public function check_user()
+	{
+		$username = $_POST["username"];
+		$check = $this->assist_backend->check_user($username);
+
+		if ($check == 'account_no_data') {
+			echo 'account_no_data';
+			exit;
+		} else if ($check == 'delete_account') {
+			echo 'delete_account';
+			exit;
+		} else if ($check == 'ban_account') {
+			echo 'ban_account';
+			exit;
+		} else if ($check == 'suc_account') {
+			echo 'suc_account';
+			exit;
+		}
+		// echo json_encode($check);
+	}
+	public function check_pass()
+	{
+		$username = strtoupper($_POST["username"]);
+		$pass = $_POST["pass"];
+		$action = base64_decode($_POST["action"]);
+
+		if ($action == 'login') {
+			$check = $this->assist_backend->check_pass($username, $pass);
+
+			
+			// echo json_encode($check);
+			// exit;
+			if ($check == 'error_pass') {
+				echo 'error_pass';
+				exit;
+			} else if ($check['action'] == 'suc_pass') {
+				$arrData = array('sessemail' => $check[0]['email'],'sessDep' => $check[0]['dep_id'],'sessGname' => $check[0]['g_name'],'sessFname' => $check[0]['f_name'], 'sessLname' => $check[0]['l_name'], 'sessUsr' => $check[0]['employee'], 'sessUsrId' => $check[0]['user_id'],'sess_order' =>$check[0]['order_g'], 'sessGroup' => $check[0]['g_id'], 'loggedIn' => "OK");
+				$this->session->set_userdata($arrData);
+				$this->assist_backend->checksession();
+				echo 'suc_pass';
+				exit;
+			} else {
+				$arrData = array('sessemail' => $check[0]['email'],'sessDep' => $check[0]['dep_id'],'sessGname' => $check[0]['g_name'],'sessFname' => $check[0]['f_name'], 'sessLname' => $check[0]['l_name'], 'sessUsr' => $check[0]['employee'], 'sessUsrId' => $check[0]['user_id'],'sess_order' =>$check[0]['order_g'], 'sessGroup' => $check[0]['g_id'], 'loggedIn' => "OK");
+				$this->session->set_userdata($arrData);
+				$this->assist_backend->checksession();
+				echo 'suc_pass_menu';
 			}
-		
-?>
+			// echo json_encode($check);
+		}
+	}
+	public function manage()
+	{
+		redirect('Manage/Assist_way');
+	}
+	public function manage_menu()
+	{
+		redirect('Manage/Home');
+	}
+}

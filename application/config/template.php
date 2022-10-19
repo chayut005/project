@@ -56,7 +56,7 @@ $template['active_template'] = 'public';
 /*
   |--------------------------------------------------------------------------
   | Default Template Configuration (adjust this or create your own)
-  |--------------------------------------------------------------------------
+  |-------------------------------------------------------------------------
  */
 //public template
 $template['public']['template'] = 'all/softmat/tpl_backend.php';
@@ -66,8 +66,8 @@ $template['public']['regions'] = array(
 	'asset_url',
   'image_url',
 	'page_title',
+  'page_menu',
   'page_header',
-	'page_menu',
   'page_content',
 	'page_footer'
 );
